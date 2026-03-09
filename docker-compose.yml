@@ -1,0 +1,29 @@
+services:
+  mongo:
+    image: mongo:7.0
+    container_name: restaurant-ordering-mongo
+    command: ["mongod", "--bind_ip_all", "--replSet", "rs0"]
+    ports:
+      - "27017:27017"
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "mongosh --quiet --eval \"try { rs.status().ok } catch (e) { 0 }\" mongodb://127.0.0.1:27017/admin | grep 1 || exit 1"
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 5s
+
+  mongo-init:
+    image: mongo:7.0
+    depends_on:
+      - mongo
+    restart: "no"
+    entrypoint:
+      [
+        "bash",
+        "-lc",
+        "until mongosh --host mongo --quiet --eval 'db.runCommand({ ping: 1 }).ok' >/dev/null 2>&1; do sleep 2; done; mongosh --host mongo --quiet <<'EOF'\ntry {\n  rs.status();\n} catch (error) {\n  rs.initiate({ _id: 'rs0', members: [{ _id: 0, host: 'localhost:27017' }] });\n}\nEOF\n"
+      ]

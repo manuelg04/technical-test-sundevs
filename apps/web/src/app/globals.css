@@ -1,0 +1,44 @@
+:root {
+  --bg: #f6f0e8;
+  --bg-accent: #e9ddce;
+  --surface: rgba(255, 250, 245, 0.86);
+  --surface-strong: rgba(42, 31, 24, 0.92);
+  --line: rgba(84, 59, 41, 0.18);
+  --text: #2c1f16;
+  --text-soft: rgba(44, 31, 22, 0.72);
+  --highlight: #ab5733;
+  --highlight-soft: rgba(171, 87, 51, 0.12);
+  --danger: #8b2b2b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(171, 87, 51, 0.18), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(89, 121, 99, 0.2), transparent 26%),
+    linear-gradient(135deg, var(--bg), #fdfaf4 45%, var(--bg-accent));
+  color: var(--text);
+  font-family: var(--font-mono), monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}

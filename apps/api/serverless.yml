@@ -1,0 +1,37 @@
+service: restaurant-ordering-api
+frameworkVersion: '4'
+useDotenv: true
+
+plugins:
+  - serverless-esbuild
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  stage: ${opt:stage, 'local'}
+  region: us-east-1
+  timeout: 30
+
+functions:
+  api:
+    handler: src/lambda.handler
+    events:
+      - httpApi:
+          method: ANY
+          path: /
+      - httpApi:
+          method: ANY
+          path: /{proxy+}
+
+custom:
+  serverless-offline:
+    httpPort: ${env:PORT, '3001'}
+  esbuild:
+    bundle: true
+    minify: false
+    sourcemap: true
+    platform: node
+    target: node20
+    external:
+      - aws-sdk

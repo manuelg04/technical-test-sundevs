@@ -1,0 +1,10 @@
+node_modules
+dist
+.next
+coverage
+.serverless
+.env
+.env.local
+apps/api/.env
+apps/web/.env.local
+apps/web/.env

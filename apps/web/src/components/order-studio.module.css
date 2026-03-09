@@ -1,0 +1,322 @@
+.shell {
+  min-height: 100vh;
+  padding: 32px 20px 56px;
+}
+
+.frame {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  gap: 24px;
+}
+
+.hero {
+  display: grid;
+  gap: 10px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  background: linear-gradient(135deg, rgba(255, 248, 240, 0.88), rgba(239, 225, 207, 0.75));
+  box-shadow: 0 18px 40px rgba(74, 48, 26, 0.08);
+}
+
+.eyebrow {
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--highlight);
+  font-size: 12px;
+}
+
+.hero h1 {
+  font-family: var(--font-serif), serif;
+  font-size: clamp(3rem, 6vw, 5.6rem);
+  line-height: 0.92;
+  max-width: 12ch;
+}
+
+.hero p {
+  max-width: 65ch;
+  color: var(--text-soft);
+  line-height: 1.6;
+}
+
+.statusBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.statusPill {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.68);
+  padding: 10px 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 12px;
+}
+
+.grid {
+  display: grid;
+  gap: 24px;
+}
+
+@media (min-width: 960px) {
+  .grid {
+    grid-template-columns: minmax(0, 1.6fr) minmax(320px, 0.85fr);
+    align-items: start;
+  }
+}
+
+.menuSection {
+  display: grid;
+  gap: 18px;
+}
+
+.categoryBlock {
+  display: grid;
+  gap: 14px;
+}
+
+.categoryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 12px;
+}
+
+.categoryHeader h2 {
+  font-family: var(--font-serif), serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+}
+
+.cards {
+  display: grid;
+  gap: 16px;
+}
+
+.card {
+  display: grid;
+  gap: 16px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  backdrop-filter: blur(10px);
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.cardTop h3 {
+  font-family: var(--font-serif), serif;
+  font-size: 1.6rem;
+}
+
+.cardTop p {
+  color: var(--text-soft);
+  line-height: 1.5;
+}
+
+.priceTag {
+  white-space: nowrap;
+  align-self: start;
+  padding: 10px 12px;
+  background: var(--surface-strong);
+  color: #fff7f2;
+}
+
+.controls {
+  display: grid;
+  gap: 14px;
+}
+
+.quantity {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.quantity input {
+  width: 88px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.modifierGroup {
+  display: grid;
+  gap: 8px;
+}
+
+.modifierHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: baseline;
+}
+
+.modifierHeader strong {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.modifierHint {
+  color: var(--text-soft);
+  font-size: 12px;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.option {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.7);
+  padding: 10px 12px;
+  cursor: pointer;
+}
+
+.optionActive {
+  border-color: rgba(171, 87, 51, 0.48);
+  background: var(--highlight-soft);
+}
+
+.actionRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.primaryButton,
+.secondaryButton,
+.ghostButton,
+.dangerButton {
+  border: 1px solid transparent;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.primaryButton:hover,
+.secondaryButton:hover,
+.ghostButton:hover,
+.dangerButton:hover {
+  transform: translateY(-1px);
+}
+
+.primaryButton {
+  background: var(--surface-strong);
+  color: #fef9f4;
+}
+
+.secondaryButton {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: var(--line);
+}
+
+.ghostButton {
+  background: transparent;
+  border-color: var(--line);
+}
+
+.dangerButton {
+  background: rgba(139, 43, 43, 0.1);
+  border-color: rgba(139, 43, 43, 0.28);
+  color: var(--danger);
+}
+
+.cartPane {
+  display: grid;
+  gap: 16px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  background: rgba(255, 249, 243, 0.92);
+  position: sticky;
+  top: 24px;
+}
+
+.cartHeader {
+  display: grid;
+  gap: 6px;
+}
+
+.cartHeader h2 {
+  font-family: var(--font-serif), serif;
+  font-size: 2.2rem;
+}
+
+.cartHeader p {
+  color: var(--text-soft);
+  line-height: 1.5;
+}
+
+.cartItems {
+  display: grid;
+  gap: 12px;
+}
+
+.cartItem {
+  display: grid;
+  gap: 8px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.cartItemHead {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.cartMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  color: var(--text-soft);
+  font-size: 13px;
+}
+
+.modifierList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.modifierBadge {
+  border: 1px solid var(--line);
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.totals {
+  display: grid;
+  gap: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.checkoutRow {
+  display: grid;
+  gap: 10px;
+}
+
+.error {
+  color: var(--danger);
+  font-size: 13px;
+}
+
+.emptyState {
+  color: var(--text-soft);
+  line-height: 1.6;
+}
